@@ -8,12 +8,14 @@ class CustomAppBar extends StatelessWidget {
     required this.onAboutPressed,
     required this.onContactPressed,
     required this.onProjectPressed,
+    required this.selectedTabIndex,
   });
 
   final VoidCallback onHomePressed;
   final VoidCallback onAboutPressed;
   final VoidCallback onContactPressed;
   final VoidCallback onProjectPressed;
+  final int selectedTabIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,9 @@ class CustomAppBar extends StatelessWidget {
           onPressed: onHomePressed,
           child: Text(
             'Home',
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: selectedTabIndex == 0 ? FontWeight.w600 : null,
+                ),
           ),
         ),
         const SizedBox(width: 20),
@@ -47,7 +51,9 @@ class CustomAppBar extends StatelessWidget {
           onPressed: onAboutPressed,
           child: Text(
             'About',
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: selectedTabIndex == 1 ? FontWeight.w600 : null,
+                ),
           ),
         ),
         const SizedBox(width: 20),
@@ -55,7 +61,9 @@ class CustomAppBar extends StatelessWidget {
           onPressed: onProjectPressed,
           child: Text(
             'Project',
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: selectedTabIndex == 2 ? FontWeight.w600 : null,
+                ),
           ),
         ),
         const SizedBox(width: 20),
@@ -63,7 +71,9 @@ class CustomAppBar extends StatelessWidget {
           onPressed: onContactPressed,
           child: Text(
             'Contact',
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  fontWeight: selectedTabIndex == 3 ? FontWeight.w600 : null,
+                ),
           ),
         ),
         SizedBox(width: MediaQuery.of(context).size.width * .25),

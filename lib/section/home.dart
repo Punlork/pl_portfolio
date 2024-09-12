@@ -24,6 +24,7 @@ class Home extends StatelessWidget {
                     'Hello, ',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           letterSpacing: 5,
+                          color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
                         ),
                   ),
                   const SizedBox(height: 20),
@@ -32,7 +33,10 @@ class Home extends StatelessWidget {
                     children: [
                       Text(
                         "My name is ",
-                        style: Theme.of(context).textTheme.displaySmall,
+                        style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                              color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
+                              fontWeight: FontWeight.normal,
+                            ),
                       ),
                       const HoverText(text: 'Punlork.'),
                     ],
@@ -46,6 +50,7 @@ class Home extends StatelessWidget {
                               letterSpacing: 5,
                               height: 1,
                               fontWeight: FontWeight.w600,
+                              color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
                             ),
                       ),
                       Text(
@@ -54,9 +59,20 @@ class Home extends StatelessWidget {
                               letterSpacing: 5,
                               height: 1,
                               fontWeight: FontWeight.w600,
+                              color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
                             ),
                       ),
                     ],
+                  ),
+                  const SizedBox(height: 40),
+                  Text(
+                    'Passionate Mobile and Frontend Developer skilled in crafting intuitive, responsive, and high-performance apps and web experiences with a focus on clean code and seamless user interfaces.',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          letterSpacing: 1.5,
+                          height: 2,
+                          color: ThemeUtil.isDarkMode(context) ? Colors.white54 : null,
+                        ),
+                    textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 40),
                   Row(
@@ -91,6 +107,7 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(width: 40),
             Container(
               decoration: BoxDecoration(
                 border: Border.all(
