@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pl_portfolio/util/theme.dart';
 import 'package:pl_portfolio/util/web.dart';
 import 'package:pl_portfolio/widget/hover_text.dart';
@@ -22,23 +23,31 @@ class Home extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     'Hello, ',
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          letterSpacing: 5,
-                          color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
-                        ),
+                    style: GoogleFonts.getFont(
+                      'Roboto Slab',
+                      textStyle: Theme.of(context).textTheme.titleLarge,
+                    ).copyWith(
+                      letterSpacing: 5,
+                      color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
+                    ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 40),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         "My name is ",
-                        style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                              color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
-                              fontWeight: FontWeight.normal,
-                            ),
+                        style: GoogleFonts.getFont(
+                          'Roboto Slab',
+                          textStyle: Theme.of(context).textTheme.displaySmall,
+                        ).copyWith(
+                          color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
-                      const HoverText(text: 'Punlork.'),
+                      const HoverText(
+                        text: 'Punlork.',
+                      ),
                     ],
                   ),
                   const SizedBox(height: 40),
@@ -46,12 +55,15 @@ class Home extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         'Mobile App | Frontend ',
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              letterSpacing: 5,
-                              height: 1,
-                              fontWeight: FontWeight.w600,
-                              color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
-                            ),
+                        style: GoogleFonts.getFont(
+                          'Montserrat',
+                          textStyle: Theme.of(context).textTheme.titleLarge,
+                        ).copyWith(
+                          letterSpacing: 5,
+                          height: 1,
+                          fontWeight: FontWeight.w600,
+                          color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
+                        ),
                       ),
                       Text(
                         'Developer ',
@@ -67,11 +79,14 @@ class Home extends StatelessWidget {
                   const SizedBox(height: 40),
                   Text(
                     'Passionate Mobile and Frontend Developer skilled in crafting intuitive, responsive, and high-performance apps and web experiences with a focus on clean code and seamless user interfaces.',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          letterSpacing: 1.5,
-                          height: 2,
-                          color: ThemeUtil.isDarkMode(context) ? Colors.white54 : null,
-                        ),
+                    style: GoogleFonts.getFont(
+                      'Roboto Slab',
+                      textStyle: Theme.of(context).textTheme.bodyMedium,
+                    ).copyWith(
+                      letterSpacing: 1.5,
+                      height: 2,
+                      color: ThemeUtil.isDarkMode(context) ? Colors.white54 : null,
+                    ),
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 40),
@@ -117,7 +132,7 @@ class Home extends StatelessWidget {
                 borderRadius: BorderRadius.circular(1000),
               ),
               child: const CircleAvatar(
-                maxRadius: 200,
+                maxRadius: 150,
                 backgroundImage: AssetImage(
                   'asset/image/profile.jpg',
                 ),

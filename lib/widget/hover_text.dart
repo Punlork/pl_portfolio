@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HoverText extends StatefulWidget {
   const HoverText({super.key, required this.text});
@@ -37,13 +38,15 @@ class _HoverTextState extends State<HoverText> {
         });
       },
       child: DefaultTextStyle(
-        style: Theme.of(context).textTheme.displayLarge!.copyWith(
-              height: 1,
-              letterSpacing: 15,
-              fontWeight: FontWeight.w600,
-              fontFamily: 'Horizon',
-              color: _isHovered ? Colors.yellowAccent : null,
-            ),
+        style: GoogleFonts.getFont(
+          'Montserrat',
+          textStyle: Theme.of(context).textTheme.displayLarge,
+        ).copyWith(
+          height: 1,
+          letterSpacing: 15,
+          fontWeight: FontWeight.w600,
+          color: _isHovered ? Colors.yellowAccent : null,
+        ),
         child: AnimatedTextKit(
           key: ValueKey(isAnimating),
           animatedTexts: [
@@ -53,7 +56,6 @@ class _HoverTextState extends State<HoverText> {
             ),
           ],
           onFinished: () {
-            print("RUN");
             isAnimating = 0;
           },
           totalRepeatCount: 1000,

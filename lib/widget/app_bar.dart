@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pl_portfolio/util/theme.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -31,10 +32,13 @@ class CustomAppBar extends StatelessWidget {
       ),
       title: Text(
         'PL',
-        style: Theme.of(context).textTheme.displaySmall?.copyWith(
-              fontWeight: FontWeight.w600,
-              letterSpacing: 10,
-            ),
+        style: GoogleFonts.getFont(
+          'Montserrat',
+          textStyle: Theme.of(context).textTheme.displaySmall,
+        ).copyWith(
+          fontWeight: FontWeight.w600,
+          letterSpacing: 10,
+        ),
       ),
       actions: [
         TextButton(
