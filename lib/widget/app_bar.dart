@@ -30,14 +30,20 @@ class CustomAppBar extends StatelessWidget {
           width: 1,
         ),
       ),
-      title: Text(
-        'PL',
-        style: GoogleFonts.getFont(
-          'Montserrat',
-          textStyle: Theme.of(context).textTheme.displaySmall,
-        ).copyWith(
-          fontWeight: FontWeight.w600,
-          letterSpacing: 10,
+      title: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: onHomePressed,
+          child: Text(
+            'PL',
+            style: GoogleFonts.getFont(
+              'Montserrat',
+              textStyle: Theme.of(context).textTheme.displaySmall,
+            ).copyWith(
+              fontWeight: FontWeight.w600,
+              letterSpacing: 10,
+            ),
+          ),
         ),
       ),
       actions: [

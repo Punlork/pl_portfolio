@@ -31,7 +31,7 @@ class Home extends StatelessWidget {
                       color: ThemeUtil.isDarkMode(context) ? Colors.white70 : null,
                     ),
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 20),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -104,7 +104,7 @@ class Home extends StatelessWidget {
                       const SizedBox(width: 12),
                       IconButton(
                         tooltip: 'https://t.me/chekpunlork',
-                        onPressed: () => WebUtil.openWebURL('https://t.me/punlork'),
+                        onPressed: () => WebUtil.openWebURL('https://t.me/chekpunlork'),
                         icon: const Icon(
                           FontAwesomeIcons.telegram,
                         ),
